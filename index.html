@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Math Master</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- ================= HOME ================= -->
+
+    <section id="homeScreen" class="screen active">
+
+        <div class="home-top">
+
+            <div>
+                <div class="mini-title">
+                    WELCOME TO
+                </div>
+
+                <h1>Math Master</h1>
+            </div>
+
+            <div class="coins">
+                <span class="coin-icon">C</span>
+                <span id="homeCoins">0</span>
+            </div>
+
+        </div>
+
+
+        <div class="hero">
+
+            <div class="brain">
+                🧠
+            </div>
+
+            <h2>Train Your Brain</h2>
+
+            <p>
+                Solve math puzzles, complete levels
+                and earn coins.
+            </p>
+
+            <button
+                id="playButton"
+                class="play-button">
+                ▶ PLAY GAME
+            </button>
+
+        </div>
+
+
+        <div class="home-cards">
+
+            <div class="info-card">
+                <strong>2,000</strong>
+                <span>Total Levels</span>
+            </div>
+
+            <div class="info-card">
+                <strong>4</strong>
+                <span>Math Modes</span>
+            </div>
+
+            <div class="info-card">
+                <strong>💡</strong>
+                <span>Hints</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MODE SCREEN ================= -->
+
+    <section id="modeScreen" class="screen">
+
+        <header>
+
+            <button
+                id="modeBack"
+                class="back">
+                ←
+            </button>
+
+            <div>
+                <small>MATH MASTER</small>
+                <h2>Choose Mode</h2>
+            </div>
+
+            <div class="coins">
+                <span class="coin-icon">C</span>
+                <span id="modeCoins">0</span>
+            </div>
+
+        </header>
+
+
+        <p class="section-subtitle">
+            Select a category to start playing
+        </p>
+
+
+        <div class="mode-list">
+
+
+            <!-- ADDITION -->
+
+            <button
+                class="mode-card addition"
+                data-mode="addition">
+
+                <div class="mode-icon">
+                    +
+                </div>
+
+                <div class="mode-text">
+
+                    <strong>
+                        Addition
+                    </strong>
+
+                    <span>
+                        500 Levels
+                    </span>
+
+                </div>
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </button>
+
+
+
+            <!-- SUBTRACTION -->
+
+            <button
+                class="mode-card subtraction"
+                data-mode="subtraction">
+
+                <div class="mode-icon">
+                    −
+                </div>
+
+                <div class="mode-text">
+
+                    <strong>
+                        Subtraction
+                    </strong>
+
+                    <span>
+                        500 Levels
+                    </span>
+
+                </div>
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </button>
+
+
+
+            <!-- MULTIPLICATION -->
+
+            <button
+                class="mode-card multiplication"
+                data-mode="multiplication">
+
+                <div class="mode-icon">
+                    ×
+                </div>
+
+                <div class="mode-text">
+
+                    <strong>
+                        Multiplication
+                    </strong>
+
+                    <span>
+                        500 Levels
+                    </span>
+
+                </div>
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </button>
+
+
+
+            <!-- DIVISION -->
+
+            <button
+                class="mode-card division"
+                data-mode="division">
+
+                <div class="mode-icon">
+                    ÷
+                </div>
+
+                <div class="mode-text">
+
+                    <strong>
+                        Division
+                    </strong>
+
+                    <span>
+                        500 Levels
+                    </span>
+
+                </div>
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= LEVEL SCREEN ================= -->
+
+    <section id="levelsScreen" class="screen">
+
+        <header>
+
+            <button
+                id="levelsBack"
+                class="back">
+                ←
+            </button>
+
+            <div>
+
+                <small id="levelModeSmall">
+                    ADDITION
+                </small>
+
+                <h2 id="levelsTitle">
+                    Addition Levels
+                </h2>
+
+            </div>
+
+            <div class="coins">
+
+                <span class="coin-icon">
+                    C
+                </span>
+
+                <span id="levelCoins">
+                    0
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <div class="level-progress">
+
+            <div>
+
+                <span>
+                    Progress
+                </span>
+
+                <strong id="progressText">
+                    1 / 500
+                </strong>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressFill">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="levelsGrid"
+            class="levels-grid">
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= GAME SCREEN ================= -->
+
+    <section id="gameScreen" class="screen">
+
+        <header>
+
+            <button
+                id="gameBack"
+                class="back">
+                ←
+            </button>
+
+
+            <div class="game-level-title">
+
+                <small id="gameModeName">
+                    ADDITION
+                </small>
+
+                <strong>
+                    LEVEL
+                    <span id="currentLevel">
+                        1
+                    </span>
+                </strong>
+
+            </div>
+
+
+            <div class="coins">
+
+                <span class="coin-icon">
+                    C
+                </span>
+
+                <span id="gameCoins">
+                    0
+                </span>
+
+            </div>
+
+        </header>
+
+
+
+        <div class="question-progress">
+
+            Question
+
+            <b id="questionNumber">
+                1
+            </b>
+
+            / 5
+
+        </div>
+
+
+
+        <div class="question-card">
+
+            <div class="question-label">
+                SOLVE THIS
+            </div>
+
+            <div id="question">
+                5 + 5 = ?
+            </div>
+
+        </div>
+
+
+
+        <div class="answer-area">
+
+            <input
+                type="number"
+                id="answerInput"
+                placeholder="Enter answer"
+                autocomplete="off"
+            >
+
+
+            <button
+                id="checkButton"
+                class="check-button">
+
+                ✓ CHECK ANSWER
+
+            </button>
+
+
+            <button
+                id="nextQuestionButton"
+                class="next-button hidden">
+
+                NEXT QUESTION →
+
+            </button>
+
+
+            <button
+                id="hintButton"
+                class="hint-button">
+
+                💡 HINT
+
+            </button>
+
+
+            <div
+                id="message"
+                class="message">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= HINT POPUP ================= -->
+
+    <div
+        id="hintPopup"
+        class="overlay hidden">
+
+        <div class="popup">
+
+            <div class="popup-icon">
+                💡
+            </div>
+
+            <h2>
+                Need a Hint?
+            </h2>
+
+            <p>
+                Watch a short advertisement
+                to reveal the answer.
+            </p>
+
+
+            <button
+                id="playAdButton"
+                class="play-button">
+
+                ▶ PLAY AD
+
+            </button>
+
+
+            <button
+                id="removeAdButton"
+                class="remove-ad">
+
+                Remove Ads
+
+            </button>
+
+
+            <button
+                id="cancelHintButton"
+                class="cancel-button">
+
+                CANCEL
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= AD POPUP ================= -->
+
+    <div
+        id="adPopup"
+        class="overlay hidden">
+
+        <div class="popup">
+
+            <h2>
+                Advertisement
+            </h2>
+
+            <div class="ad-box">
+                ADVERTISEMENT
+            </div>
+
+            <p>
+                Please wait...
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= LEVEL COMPLETE ================= -->
+
+    <div
+        id="completePopup"
+        class="overlay hidden">
+
+        <div class="popup">
+
+            <div class="complete-icon">
+                🏆
+            </div>
+
+            <h2>
+                Level Complete!
+            </h2>
+
+            <p>
+                Congratulations!
+                You completed this level.
+            </p>
+
+
+            <div class="reward">
+
+                🪙 +
+                <span id="rewardCoins">
+                    10
+                </span>
+
+                Coins
+
+            </div>
+
+
+            <div class="total-coins">
+
+                Total Coins:
+                <strong id="completeCoins">
+                    0
+                </strong>
+
+            </div>
+
+
+            <button
+                id="nextLevelButton"
+                class="play-button">
+
+                NEXT LEVEL →
+
+            </button>
+
+
+            <button
+                id="backToLevelsButton"
+                class="cancel-button">
+
+                BACK TO LEVELS
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="./game.js"></script>
+
+</body>
+</html>

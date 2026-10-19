@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Math Master</string>
+    <string name="title_activity_main">Math Master</string>
+    <string name="package_name">com.mathmaster.game</string>
+    <string name="custom_url_scheme">com.mathmaster.game</string>
+</resources>
